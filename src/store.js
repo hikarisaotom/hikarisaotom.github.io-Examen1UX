@@ -49,10 +49,21 @@ export default new Vuex.Store({
           nombre:'' ,
         id:0       },
         carritos:[],
-        totalcomprar:0
+        totalcomprar:0,
+        bandera:1,
+        usuarios:[{
+          nombre: 'Claudia',
+          apellido:'Cortes',
+          password:'1234',
+          nickname:'hikarisaotom',
+        }]
 
   },
   mutations: {
+
+    iniciarsesion(state){
+
+    },
     /*MOSTRAR */
     loadCarrito(state){
       var dbcarritos=JSON.parse(window.localStorage.getItem('CarritoCompras'));

@@ -8,16 +8,7 @@ export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: () => import(/* webpackChunkName: "home" */ './views/Home.vue')
-    },
-    {
-      path: '/about',
-      name: 'about',
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    },
+   
     {
       path:'/inicio',
       name:'inicio',
@@ -40,6 +31,18 @@ export default new Router({
       path:'/construccion',
       name:'construccion',
       component: () => import(/* webpackChunkName: "construccion" */ './views/Construccion.vue')
+
+    },
+    {
+      path:'/',
+      name:'Principal',
+      component: () => import(/* webpackChunkName: "Principal" */ './views/Principal.vue')
+
+    },
+    {
+      path:'/Registrarse',
+      name:'Registrarse',
+      component: () => import(/* webpackChunkName: "Registrarse" */ './views/Registrarse.vue')
 
     }
   ]
