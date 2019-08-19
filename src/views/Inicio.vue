@@ -4,12 +4,12 @@
               <div class="col s12 green ">
           <ul>
               <li v-for="(item,index) of arrayordenado" :key="item.id">
-                <div class="row">
+                <div class="row" v-show="item.tipo==='herramienta'">
                   <div class="col s3 ">
                     <div class="card ">
                       <div class="card-image">
                         <img v-bind:src="item.url" />
-                        <span class="card-title">{{ item.nombre }}</span>
+                        <span class="card-title black-text">{{ item.nombre }}</span>
                       </div>
                       <div class="card-content">
                         <p>
@@ -21,8 +21,6 @@
                         </p>
                       </div>
                       <div class="card-action" v-show="item.cantidad>0">
-                        
-                        <!-- <a  @click="addToCart(arrayordenado[index])">probando bandera</a>-->
                       <a class="waves-effect waves-light btn modal-trigger" href="#modal1" @click="dismunirStock(index)">Comprar</a>
                       </div>
                       <div class="card-action" v-show="item.cantidad===0||item.cantidad<0">

@@ -1,15 +1,15 @@
 <template>
     <div class="muestras">
         <!--INICIO DEL MI CODIGO-->
-              <div class="col s12 green">
-          <ul class="lista">
-              <li v-for="(item,index) of arrayordenado" :key="item.id" class="lista">
-                <div class="row">
-                  <div class="col s3">
-                    <div class="card">
+              <div class="col s12 green ">
+          <ul>
+              <li v-for="(item,index) of arrayordenado" :key="item.id">
+                <div class="row" v-show="item.tipo==='construccion'">
+                  <div class="col s3 ">
+                    <div class="card ">
                       <div class="card-image">
                         <img v-bind:src="item.url" />
-                        <span class="card-title">{{ item.nombre }}</span>
+                        <span class="card-title black-text">{{ item.nombre }}</span>
                       </div>
                       <div class="card-content">
                         <p>
@@ -21,8 +21,7 @@
                         </p>
                       </div>
                       <div class="card-action" v-show="item.cantidad>0">
-                          
-                        <a href="#" @click="dismunirStockConstruccion(index)">Agregar a carrito</a>
+                      <a class="waves-effect waves-light btn modal-trigger" href="#modal1" @click="dismunirStock(index)">Comprar</a>
                       </div>
                       <div class="card-action" v-show="item.cantidad===0||item.cantidad<0">
                         <h5>NO HAY EXISTENCIA EN STOCK</h5>
@@ -36,22 +35,34 @@
         <!--FIN DE MI CODIGO-->
     </div>
 </template>
-
+  <!-- JQUERY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <!-- JS MATERIALIZE -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
 <script>
 import{mapState,mapMutations} from 'vuex';
 export default {
     name:'Construccion',
     computed:{
-        ...mapState(['construcciones']),
+        ...mapState(['herramientas']),
         arrayordenado(){
-            return this.construcciones.sort((a,b)=>b.cantidad-a.cantidad)
+            return this.herramientas.sort((a,b)=>b.cantidad-a.cantidad)
         }
     },
     methods:{
-        ...mapMutations(['dismunirStockConstruccion'])
+        ...mapMutations(['dismunirStockHerramienta']),
+         ...mapMutations(['addToCart']),
+         ...mapMutations(['dismunirStock'])
     }
 
 }
+
+
+ document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
+  });
+
 </script>
 
 <style scoped>
@@ -59,9 +70,6 @@ export default {
     width:100%; 
     height:100%;
     overflow-x:hidden; overflow-y:scroll;
-  }
-
-  .lista{
-      padding: 0px;
+    padding: 0px;
   }
 </style>

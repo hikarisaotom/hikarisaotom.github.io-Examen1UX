@@ -1,23 +1,7 @@
 <template>
   <div>
     <!--INICIOO DE MI CODIO-->
-    <nav>
-      <div class="nav-wrapper orange lighten-2">
-        <a href="#!" class="brand-logo">Logo</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger">
-          <i class="material-icons">menu</i>
-        </a>
-        <ul class="right hide-on-med-and-down">
-          <li>
-            <a href="#!">Carrito</a>
-          </li>
-          <li>
-            <a href="./Inicio">Configuracion del perfil</a>
-          </li>
-          
-        </ul>
-      </div>
-    </nav>
+    
     <center><div class="col s12 ">
       <ul class="tabs cyan lighten-3">
         <li class="tab col s3">
@@ -33,10 +17,10 @@
           <router-link to="/Jardin">Jardineria</router-link>
         </li>
         <li class="tab col s3">
-         <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+         <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i> Configuracion</a>
         </li>
         <li class="tab col s3">
-         <a  data-target="carrito" class="sidenav-trigger"  @click="loadCarrito"><i class="material-icons">shop</i></a>
+         <a  data-target="carrito" class="sidenav-trigger"  @click="loadCarrito"><i class="material-icons">shop</i>Carrito</a>
         </li>
         
       </ul>

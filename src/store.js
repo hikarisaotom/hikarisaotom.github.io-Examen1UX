@@ -8,58 +8,43 @@ export default new Vuex.Store({
   state: {
     herramientas:[
       { tipo: 'herramienta',
-       nombre:'Martillo',
+       nombre:'MARTILLO',
         url:'https://www.officedepot.com.mx/medias/11053.jpg-1200ftw?context=bWFzdGVyfHJvb3R8MjU4OTE3fGltYWdlL2pwZWd8aGQxL2hhOC85NTYzMjY5NjkzNDcwLmpwZ3xhNTMxZWNlYzI0ZTVjMWNmZTRlZTdiZjU4NjgwZTVmOTMzZTgxYzZhMWYxYjlkODljNTYyZjNhZTRkMWZmNGQ5',
         descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
-        cantidad:50
+        cantidad:5
       },
-      { tipo: 'escolar',
-       nombre:'Cuaderno',
+      { tipo: 'jardin',
+       nombre:'PALA',
        url:'/assets/cuaderno.jpg',
         descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
         cantidad:50
       },
       { tipo: 'escolar',
-      nombre:'Cuaderno',
+       nombre:'CUADERNO',
+       url:'/assets/cuaderno.jpg',
+        descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
+        cantidad:50
+      },
+      { tipo: 'construccion',
+      nombre:'Tubos',
       url:'/assets/cuaderno.jpg',
        descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
-       cantidad:50
+       cantidad:10
      },
-     { tipo: 'escolar',
-     nombre:'Cuaderno',
+     { tipo: 'herramienta',
+     nombre:'CLAVOS',
      url:'/assets/cuaderno.jpg',
       descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
       cantidad:50
     },
-      { tipo: 'escolar',
-       nombre:'Cuaderno',
+      { tipo: 'herramienta',
+       nombre:'TENAZAS',
         url:'../resources/cuaderno.jpg',
         descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
         cantidad:50
       }
   ],
-  escolares:[
-    { tipo: 'escolar',
-     nombre:'Cuaderno',
-      url:'../resources/cuaderno.jpg',
-      descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
-      cantidad:50
-    }],
-    jardines:[
-      { tipo: 'Jardineria',
-       nombre:'Pala',
-        url:'../resources/cuaderno.jpg',
-        descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
-        cantidad:50
-      }],
-      construcciones:[
-        { tipo: 'Construccion',
-         nombre:'Tubos',
-          url:'../resources/cuaderno.jpg',
-          descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
-          cantidad:50
-        }],
-
+  
         productoAgregarCarrito:{
           nombre:'' ,
         id:0       },
@@ -68,14 +53,25 @@ export default new Vuex.Store({
 
   },
   mutations: {
+    /*MOSTRAR */
     loadCarrito(state){
       var dbcarritos=JSON.parse(window.localStorage.getItem('CarritoCompras'));
       var dbProducto=JSON.parse(window.localStorage.getItem('productoTemp'));
-      state.carritos=dbcarritos;
+      var dbStock=JSON.parse(window.localStorage.getItem('productosStock'));
+      if(dbcarritos!=null){
+        state.carritos=dbcarritos;
       state.productoAgregarCarrito=dbProducto;
+      state.herramientas=dbStock;
       console.log("MOSTRANDO DATOS EN LOCAL STORAGE");
+      }else{
+        console.log("ESTAN VACIOS---LLENANDO");
+        window.localStorage.setItem('CarritoCompras',JSON.stringify(state.carritos));
+        window.localStorage.setItem('productoTemp',JSON.stringify(state.productoAgregarCarrito));
+        window.localStorage.setItem('productosStock',JSON.stringify(state.herramientas));
+      }
+     
      },
-
+     /*A;ADIR PRODUCTOS AL CARRITO */
     addToCart(state){
       var index=state.productoAgregarCarrito.id;
       console.log('TOTAL A DISMINUIR',state.totalcomprar);
@@ -88,17 +84,19 @@ export default new Vuex.Store({
       cantidad:state.totalcomprar
     }
      );
- 
+     state.totalcomprar=0;
       window.localStorage.setItem('CarritoCompras',JSON.stringify(state.carritos));
       window.localStorage.setItem('productoTemp',JSON.stringify(state.productoAgregarCarrito));
+      window.localStorage.setItem('productosStock',JSON.stringify(state.herramientas));
     },
 
-
+    /*DISMINUIR LOS VALORES EN STOCK se abre cuando se muestra el modal */
     dismunirStock(state,index){
       state.productoAgregarCarrito=state.herramientas[index];
       state.productoAgregarCarrito.id=index;
      
     },
+    /*AUMENTAR Y REDUCIR EL TAMA;O DEL TOTAL DE PRODUCTOS A COMPRAR */
     Aumentar(state){
       state.totalcomprar++;
       console.log('aumentando',state.totalcomprar);
@@ -106,19 +104,6 @@ export default new Vuex.Store({
     disminuir(state){
       state.totalcomprar--;
       console.log('disminuyendo',state.totalcomprar);
-    },
-
-    dismunirStockHerramienta(state,index){
-      state.herramientas[index].cantidad--;
-    },
-    dismunirStockJardin(state,index){
-      state.jardines[index].cantidad--;
-    },
-    dismunirStockConstruccion(state,index){
-      state.construcciones[index].cantidad--;
-    },
-    dismunirStockEscolar(state,index){
-      state.escolares[index].cantidad--;
     },
 
   },
