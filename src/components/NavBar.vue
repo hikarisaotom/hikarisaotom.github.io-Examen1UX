@@ -21,10 +21,12 @@
         </li>
         <li class="tab col s3">
          <a  data-target="carrito" class="sidenav-trigger"  @click="loadCarrito"><i class="material-icons">shop</i>Carrito</a>
+         
         </li>
         
       </ul>
     </div></center>
+   
     <!--FIN DE MI CODIO-->
      <ul id="slide-out" class="sidenav">
     <li><div class="user-view">

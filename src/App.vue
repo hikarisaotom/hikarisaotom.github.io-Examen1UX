@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <div id="nav"></div>
-    <div v-show="bandera===1">
+    <div v-if="!authenticated">
+            <router-view @authenticated="setAuthenticated" />
+         </div>
       <div id="app">
         <div id="nav">
           <router-link v-if="authenticated" to="/login" v-on:click.native="logout()" replace>Logout</router-link>
@@ -19,28 +21,10 @@
         </tr>
       </table>
         </div>
-        <router-view @authenticated="setAuthenticated" />
+       
+         
+       </div>
       </div>
-    </div>
-    <div v-show="bandera===2">
-      <!--Registrarse -->
-      <router-view />
-    </div>
-    <div v-show="bandera===3">
-      <!--SESION INICIADA -->
-      <Nav-Bar></Nav-Bar>
-      <table class="principal">
-        <tr>
-          <td width="20%" class="celdas">
-            <Panel></Panel>
-          </td>
-          <td class="celdas">
-            <router-view />
-          </td>
-        </tr>
-      </table>
-    </div>
-  </div>
 </template>
 
 <script>
