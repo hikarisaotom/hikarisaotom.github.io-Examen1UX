@@ -12,6 +12,7 @@ export default new Vuex.Store({
         url:'https://d2mq510qed945.cloudfront.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/S/T/STAN0475.jpg',
         descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
         cantidad:5,
+        precio:150,
         lugar:1
 
       },
@@ -20,6 +21,7 @@ export default new Vuex.Store({
        url:'http://www.plantelia.com/3878-thickbox/pala-jardin-ancha.jpg',
         descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
         cantidad:50,
+        precio:15,
         lugar:1
       },
       { tipo: 'jardin',
@@ -27,6 +29,7 @@ export default new Vuex.Store({
       url:'http://www.plantelia.com/3878-thickbox/pala-jardin-ancha.jpg',
        descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
        cantidad:50,
+       precio:20,
        lugar:1
      },
       { tipo: 'escolar',
@@ -34,6 +37,7 @@ export default new Vuex.Store({
        url:'https://www.costco.com.mx/medias/sys_master/products/h77/he7/12047304687646.jpg',
         descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
         cantidad:50,
+        precio:15,
         lugar:1
       },
       { tipo: 'escolar',
@@ -41,6 +45,7 @@ export default new Vuex.Store({
       url:'https://www.costco.com.mx/medias/sys_master/products/h77/he7/12047304687646.jpg',
        descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
        cantidad:50,
+       precio:25,
        lugar:1
      },
       { tipo: 'construccion',
@@ -48,6 +53,7 @@ export default new Vuex.Store({
       url:'https://static.bricomart.es/478/5/3/3/a/10106992_fo_01_web.jpg',
        descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
        cantidad:10,
+       precio:50,
        lugar:1
      },
      { tipo: 'construccion',
@@ -55,6 +61,7 @@ export default new Vuex.Store({
       url:'https://static.bricomart.es/478/5/3/3/a/10106992_fo_01_web.jpg',
        descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
        cantidad:10,
+       precio:150,
        lugar:1
      },
      { tipo: 'herramienta',
@@ -62,6 +69,7 @@ export default new Vuex.Store({
      url:'https://d2mq510qed945.cloudfront.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/S/T/STAN0475.jpg',
       descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
       cantidad:50,
+      precio:5,
       lugar:1
     },
       
@@ -86,23 +94,10 @@ export default new Vuex.Store({
   },
   mutations: {
 
-    iniciarsesion(state,item){
-      console.log(item);
-      var uss=document.getElementById("usser");
-      var pass=document.getElementById("contra");
-      console.log("USUARIO",uss);
-      console.log("CONTRA",pass);
-
-      /*for (var i = 0; i < state.usuarios.length; i++) {
-        if(state.usuarios.nickname===nicknamelog&&state.usuarios.password===passlog){
-          state.bandera=3;
-          router.push('/inicio')
-          console.log("Usuario encontrado");
-
-        }
-     }*/
-     console.log('Usuario Invalido');
-     router.push('/inicio')
+    eliminar(state,index){
+      state.carritos.splice(index,1);
+      console.log('ELIMINANDO',state.carritos[index]);
+      window.localStorage.setItem('CarritoCompras',JSON.stringify(state.carritos));
     },
     /*MOSTRAR */
     loadCarrito(state){
@@ -132,7 +127,8 @@ export default new Vuex.Store({
      nombre: state.productoAgregarCarrito.nombre,
       url:state.productoAgregarCarrito.url,
       descripcion:state.productoAgregarCarrito.descripcion,
-      cantidad:state.totalcomprar
+      cantidad:state.totalcomprar,
+      precio:state.precio
     }
      );
      state.totalcomprar=0;

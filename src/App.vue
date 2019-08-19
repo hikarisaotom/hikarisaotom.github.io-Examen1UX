@@ -101,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 </script>
 <style scoped>
+
 .principal {
   height: 720px;
 }

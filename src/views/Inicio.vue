@@ -35,9 +35,10 @@
           <td  v-for="(item,index) of arrayordenado" :key="item.id" v-show="item.tipo==='herramienta' &&item.lugar===2">
            <div class="col s3 ">
                     <div class="card ">
-                      <div class="card-image">
+                      <div class="card-image grey darken-3">
                         <img v-bind:src="item.url" />
-                        <span class="card-title black-text">{{ item.nombre }}</span>
+                        <span class="card-title black-text grey darken-3">
+                          <font color="white">{{ item.nombre }}</font></span>
                       </div>
                       <div class="card-content">
                         <p>
@@ -92,6 +93,10 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css?family=Bangers|Poiret+One&display=swap");
+div{
+  font-family: "Poiret One",cursive;
+}
 .muestras {
   width: 100%;
   height: 100%;

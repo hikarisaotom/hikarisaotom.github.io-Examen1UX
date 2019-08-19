@@ -87,10 +87,16 @@
                     if(this.input.username == this.$parent.mockAccount.username && this.input.password == this.$parent.mockAccount.password) {
                         this.$emit("authenticated", true);
                         this.$router.replace({ name: "inicio" });
+                         M.toast({html: 'Bienvenida Claudia!', classes: 'rounded'});
+                          M.toast({html: 'Aprovecha y fijate en las oferta', classes: 'rounded'});
+                           M.toast({html: 'Hay remate de los productos cuyo inventario es menor a 10', classes: 'rounded'});
+                           
                     } else {
+                       M.toast({html: 'Datos Invalidos', classes: 'rounded'});
                         console.log("The username and / or password is incorrect");
                     }
                 } else {
+                   M.toast({html: 'Asegurese de haber llenado los campos', classes: 'rounded'});
                     console.log("A username and password must be present");
                 }
             }

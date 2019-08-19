@@ -95,6 +95,10 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css?family=Bangers|Poiret+One&display=swap");
+div{
+  font-family: "Poiret One",cursive;
+}
   .muestras{
     width:100%; 
     height:100%;
