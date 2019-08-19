@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  
   state: {
     herramientas:[
       { tipo: 'herramienta',
@@ -59,16 +60,28 @@ export default new Vuex.Store({
           cantidad:50
         }],
 
-        productoAgregarCarrito:{},
+        productoAgregarCarrito:{
+          nombre:''        },
         carritos:[]
 
   },
   mutations: {
+    loadCarrito(state){
+      
+      var dbcarritos=JSON.parse(window.localStorage.getItem('CarritoCompras'));
+      var dbProducto=JSON.parse(window.localStorage.getItem('productoTemp'));
+      state.carritos=dbcarritos;
+      state.productoAgregarCarrito=dbProducto;
+      console.log("MOSTRANDO DATOS EN LOCAL STORAGE");
+     },
     addToCart(state,index){
-     var productoAgregarCarrito=index;
-     state.carritos.push(productoAgregarCarrito);
+   
+      state.productoAgregarCarrito=index;
+      console.log('STATE MODIFICADO',state.productoAgregarCarrito);
+     state.carritos.push(state.productoAgregarCarrito);
      console.log('VALOR',index);
       window.localStorage.setItem('CarritoCompras',JSON.stringify(state.carritos));
+      window.localStorage.setItem('productoTemp',JSON.stringify(state.productoAgregarCarrito));
     
     },
     dismunirStockHerramienta(state,index){

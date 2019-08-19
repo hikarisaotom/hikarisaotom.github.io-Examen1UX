@@ -21,15 +21,15 @@
 <script>
 import NavBar from './components/NavBar'
 import Panel from './components/PanelLateral'
+
 export default {
   name:'app',
   components:{
     NavBar,
     Panel
   },
-   created() {
-    console.log('Component has been created!');
-  }
+
+  
 }
 
 

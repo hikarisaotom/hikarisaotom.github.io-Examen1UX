@@ -36,7 +36,7 @@
          <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </li>
         <li class="tab col s3">
-         <a href="#" data-target="carrito" class="sidenav-trigger"><i class="material-icons">shop</i></a>
+         <a  data-target="carrito" class="sidenav-trigger"  @click="loadCarrito"><i class="material-icons">shop</i></a>
         </li>
         
       </ul>
@@ -85,7 +85,7 @@
       <p>A bunch of text</p>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+      <a  class="modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
   </div>
      
@@ -97,12 +97,21 @@
 </template>
 
 <script>
-import{mapState} from 'vuex';
+import{mapState,mapMutations} from 'vuex';
 export default {
+  
   name: "NavBar",
+ 
   computed:{
         ...mapState(['carritos']),
+        ...mapState(['carritos']),
+        
+    },
+     methods:{
+        ...mapMutations(['loadCarrito']),
+        
     }
+
  
 };
 document.addEventListener('DOMContentLoaded', function() {
