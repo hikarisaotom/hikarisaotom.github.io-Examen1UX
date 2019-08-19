@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
+import LoginComponent from "./views/login.vue"
+import SecureComponent from "./views/secure.vue"
 
 Vue.use(Router)
 
@@ -33,17 +34,28 @@ export default new Router({
       component: () => import(/* webpackChunkName: "construccion" */ './views/Construccion.vue')
 
     },
-    {
-      path:'/',
-      name:'Principal',
-      component: () => import(/* webpackChunkName: "Principal" */ './views/Principal.vue')
-
-    },
+ 
     {
       path:'/Registrarse',
       name:'Registrarse',
       component: () => import(/* webpackChunkName: "Registrarse" */ './views/Registrarse.vue')
 
-    }
+    },
+    {
+      path: '/',
+      redirect: {
+          name: "login"
+      }
+  },
+  {
+      path: "/login",
+      name: "login",
+      component: LoginComponent
+  },
+  {
+      path: "/secure",
+      name: "secure",
+      component: SecureComponent
+  }
   ]
 })

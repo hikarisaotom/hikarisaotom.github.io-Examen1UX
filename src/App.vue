@@ -2,8 +2,25 @@
   <div id="app">
     <div id="nav"></div>
     <div v-show="bandera===1">
-      <!--LOG IN -->
-      <router-view />
+      <div id="app">
+        <div id="nav">
+          <router-link v-if="authenticated" to="/login" v-on:click.native="logout()" replace>Logout</router-link>
+        </div>
+        <div id="nav" v-show="authenticated">
+          <Nav-Bar></Nav-Bar>
+      <table class="principal">
+        <tr>
+          <td width="20%" class="celdas">
+            <Panel></Panel>
+          </td>
+          <td class="celdas">
+            <router-view @authenticated="setAuthenticated" />
+          </td>
+        </tr>
+      </table>
+        </div>
+        <router-view @authenticated="setAuthenticated" />
+      </div>
     </div>
     <div v-show="bandera===2">
       <!--Registrarse -->
@@ -31,6 +48,7 @@ import NavBar from "./components/NavBar";
 import Panel from "./components/PanelLateral";
 import { mapState, mapMutations } from "vuex";
 export default {
+  
   name: "app",
   components: {
     NavBar,
@@ -43,8 +61,30 @@ export default {
     /* ...mapMutations(["dismunirStockHerramienta"]),
     ...mapMutations(["addToCart"]),
     ...mapMutations(["dismunirStock"])*/
-  }
-};
+  },data() {
+            return {
+                authenticated: false,
+                mockAccount: {
+                    username: "clau",
+                    password: "1234"
+                }
+            }
+        },
+        mounted() {
+            if(!this.authenticated) {
+                this.$router.replace({ name: "login" });
+            }
+        },
+        methods: {
+            setAuthenticated(status) {
+                this.authenticated = status;
+            },
+            logout() {
+                this.authenticated = false;
+            }
+        }
+  
+}
 </script>
 <style scoped>
 .principal {
@@ -53,4 +93,5 @@ export default {
 .celdas {
   padding: 0px;
 }
+
 </style>

@@ -54,16 +54,16 @@
                   <div class="row">
                     <div class="input-field">
                       <i class="material-icons prefix">account_circle</i>
-                      <input id="icon_prefix " type="text" class="validate">
+                      <input id="icon_prefix usser" type="text" class="validate" >
                       <label for="icon_prefix">Usuario</label>
                     </div>
                     <div class="input-field">
                       <i class="material-icons prefix">phone</i>
-                      <input id="icon_telephone" type="password" class="validate" >
+                      <input id="icon_telephone contra" type="password" class="validate">
                       <label for="icon_telephone" ></label>
                     </div>
                   </div>
-                  <button @click="iniciarsesion">Iniciar sesion</button>
+                  <button onclick="datos()">Iniciar sesion</button>
                 </form>
                <a  id="ir">  <router-link to="/Registrarse">Registrarse</router-link></a>
                 
@@ -124,13 +124,31 @@
 }
 </style>
 <script>
+function datos(){
+          var uss=document.getElementById("usser");
+      var pass=document.getElementById("contra");
+      console.log("USUARIO",uss);
+      console.log("CONTRA",pass);
+      window.localStorage.setItem('usuario',uss);
+        window.localStorage.setItem('contra',pass);
+           
+        }
+    
 import{mapState,mapMutations} from 'vuex';
 export default {
     name:'Principal',
+    data() {
+            return {};
+        },
+    computed:{
+        ...mapState(['nicknamelog']),
+        ...mapState(['passlog']), 
+    },
      methods:{
         ...mapMutations(['iniciarsesion']),
         
         
     }
+    
 }
 </script>

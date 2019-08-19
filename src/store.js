@@ -56,13 +56,31 @@ export default new Vuex.Store({
           apellido:'Cortes',
           password:'1234',
           nickname:'hikarisaotom',
-        }]
+        }],
+        nicknamelog:'',
+        passlog:'',
+        
 
   },
   mutations: {
 
-    iniciarsesion(state){
+    iniciarsesion(state,item){
+      console.log(item);
+      var uss=document.getElementById("usser");
+      var pass=document.getElementById("contra");
+      console.log("USUARIO",uss);
+      console.log("CONTRA",pass);
 
+      /*for (var i = 0; i < state.usuarios.length; i++) {
+        if(state.usuarios.nickname===nicknamelog&&state.usuarios.password===passlog){
+          state.bandera=3;
+          router.push('/inicio')
+          console.log("Usuario encontrado");
+
+        }
+     }*/
+     console.log('Usuario Invalido');
+     router.push('/inicio')
     },
     /*MOSTRAR */
     loadCarrito(state){
