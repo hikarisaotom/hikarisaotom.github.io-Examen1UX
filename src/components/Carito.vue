@@ -1,6 +1,6 @@
 <template>
     <div>
-        <a  data-target="carrito" class="sidenav-trigger"  @click="loadCarrito"><i class="material-icons">shop</i>Carrito</a>
+        <a  data-target="carrito" class="sidenav-trigger"  @click="loadCarrito"><i class="material-icons">local_grocery_store</i>Carrito</a>
 
   
     </div>

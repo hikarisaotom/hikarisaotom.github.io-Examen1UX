@@ -7,14 +7,14 @@
     <div id="app">
       <div id="nav">
         <div class="fixed-action-btn">
-          <a class="btn-floating btn-large red tooltipped" v-if="authenticated" data-position="left" data-tooltip="Salir" >
-            <i class="large material-icons " >mode_edit</i>
+          <a class="btn-floating btn-large orange " v-if="authenticated" data-position="left" data-tooltip="Salir" >
+            <i class="large material-icons " >settings</i>
           </a>
           <ul>
             
               <li>
               <a class="btn-floating blue">
-                <a  data-target="slide-out" class="sidenav-trigger tooltipped" data-position="left" data-tooltip="Perfil" ><i class="material-icons">menu</i></a>
+                <a  data-target="slide-out" class="sidenav-trigger tooltipped" data-position="left" data-tooltip="Perfil" ><i class="material-icons">account_circle</i></a>
               </a>
             </li>
             <li>
@@ -23,8 +23,8 @@
               </a>
             </li>
             <li>
-              <a class="btn-floating blue">
-                <router-link v-if="authenticated" to="/login" v-on:click.native="logout()" onclick="M.toast({html: 'Hasta luego!'})"> <i class="material-icons">publish</i></router-link>
+              <a class="btn-floating blue tooltipped" data-position="left" data-tooltip="Salir" >
+                <router-link v-if="authenticated" to="/login" v-on:click.native="logout()" onclick="M.toast({html: 'Hasta luego!'})"> <i class="material-icons">power_settings_new</i></router-link>
               </a>
             </li>
           </ul>

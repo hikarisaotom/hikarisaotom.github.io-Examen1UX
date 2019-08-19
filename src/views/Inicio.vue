@@ -25,7 +25,9 @@
                        
                       </div>
                       <div class="card-action grey darken-3" v-show="item.cantidad>0">
-                      <a class="waves-effect waves-light btn modal-trigger orange" href="#modal1" @click="dismunirStock(index)"> <b>Comprar</b></a>
+                      <a class="waves-effect waves-light btn modal-trigger orange" href="#modal1" @click="dismunirStock(index)"><i class="material-icons">
+add_shopping_cart
+</i> <b> Comprar</b></a>
                       </div>
                       <div class="card-action" v-show="item.cantidad===0||item.cantidad<0">
                          <font color="#e65100"><b> <h3>NO HAY EXISTENCIA EN STOCK</h3></b></font>
@@ -57,7 +59,9 @@
                        
                       </div>
                      <div class="card-action grey darken-3" v-show="item.cantidad>0">
-                      <a class="waves-effect waves-light btn modal-trigger orange" href="#modal1" @click="dismunirStock(index)"> <b>Comprar</b></a>
+                      <a class="waves-effect waves-light btn modal-trigger orange" href="#modal1" @click="dismunirStock(index)"> <i class="material-icons">
+add_shopping_cart
+</i><b> Comprar</b></a>
                       </div>
                       <div class="card-action" v-show="item.cantidad===0||item.cantidad<0">
                          <font color="#e65100"><b> <h3>NO HAY EXISTENCIA EN STOCK</h3></b></font>

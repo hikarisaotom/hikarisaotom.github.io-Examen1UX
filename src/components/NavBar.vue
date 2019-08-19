@@ -5,27 +5,27 @@
     <nav class="orange">
       <div class="nav-wrapper orange">
         <a href="#!" class="brand-logo logo">
-          <i class="material-icons">cloud</i><b>Ferreteria</b>
+          <i class="large material-icons">local_grocery_store</i><b>Ferreteria</b>
         </a>
         <ul class="right hide-on-med-and-down">
           <li class="tooltipped" data-position="bottom" data-tooltip="Construccion">
             <router-link to="/Construccion">
-              <i class="material-icons">view_module</i>
+              <i class="material-icons">domain</i>
             </router-link>
           </li>
           <li class="tooltipped" data-position="bottom" data-tooltip="Escolar">
             <router-link to="/Escolar">
-              <i class="material-icons">view_module</i>
+              <i class="material-icons">school</i>
             </router-link>
           </li>
           <li class="tooltipped" data-position="bottom" data-tooltip="Herramientas">
             <router-link to="/Inicio">
-              <i class="material-icons">refresh</i>
+              <i class="material-icons">wb_incandescent</i>
             </router-link>
           </li>
           <li class="tooltipped" data-position="bottom" data-tooltip="Jardin">
             <router-link to="/Jardin">
-              <i class="material-icons">more_vert</i>
+              <i class="material-icons">local_florist</i>
             </router-link>
           </li>
         </ul>
@@ -57,7 +57,7 @@
       </li>
       <li>
         <a href="#!">
-          <i class="material-icons">cloud</i> <font color="orange"><h4> <b>Cliente Frecuente</b></h4></font>
+          <i class="material-icons">local_activity</i> <font color="orange"><h4> <b>Cliente Frecuente</b></h4></font>
         </a>
         <br></br>
       </li>
@@ -111,7 +111,7 @@
                   @click="eliminar(index)"
                   onclick="M.toast({html: 'Se ha eliminado el producto'})"
                 >
-                  <i class="material-icons">cloud</i>
+                  <i class="material-icons">delete_sweep</i>
                 </button>
               </td>
             </tr>
@@ -151,8 +151,12 @@
           v-model.number="totalcomprar"
           disabled
         /></td>
-          <td width="10%"><button class="btn-flat orange" @click="Aumentar"><b><h4>+</h4></b></button></td>
-          <td width="10%"><button class="btn-flat orange" @click="disminuir"><b><h3>-</h3></b></button></td>
+          <td width="10%"><button class="btn-flat orange" @click="Aumentar"><i class="large material-icons">
+add
+</i></button></td>
+          <td width="10%"><button class="btn-flat orange" @click="disminuir"><i class="large material-icons">
+remove
+</i></button></td>
           
         </tr>
       </table>
@@ -164,7 +168,9 @@
       </div>
       <div class="modal-footer grey darken-3">
         <center>
-        <a onclick="M.toast({html: 'Producto agregado al carrito'})" class="waves-effect waves-green btn pulse orange" @click="addToCart">Agregar a Carrito</a>
+        <a onclick="M.toast({html: 'Producto agregado al carrito'})" class="waves-effect waves-green btn pulse orange" @click="addToCart"><i class="material-icons">
+local_grocery_store
+</i> Agregar</a>
       </center>
       </div>
     </div>
