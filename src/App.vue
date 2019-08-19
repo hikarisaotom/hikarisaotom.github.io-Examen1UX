@@ -24,7 +24,7 @@
             </li>
             <li>
               <a class="btn-floating blue">
-                <router-link v-if="authenticated" to="/login" v-on:click.native="logout()"> <i class="material-icons">publish</i></router-link>
+                <router-link v-if="authenticated" to="/login" v-on:click.native="logout()" onclick="M.toast({html: 'Hasta luego!'})"> <i class="material-icons">publish</i></router-link>
               </a>
             </li>
           </ul>

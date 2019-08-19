@@ -6,39 +6,39 @@
                   <img src="https://www.tekcrispy.com/wp-content/uploads/2018/02/madera-1021x580.jpg" class="fullpantalla"/>
                   <!-- random image -->
                   <div class="caption center-align">
-                    <h3>This is our big Tagline!</h3>
-                    <h5 class="light grey-text text-lighten-3">
-                      Here's our small slogan.
+                    <h3>Materiales de construccion!</h3>
+                    <h5 class="light black-text text-black">
+                      Necesitas construir?.
                     </h5>
                   </div>
                 </li>
                 <li>
-                  <img src="https://durmientesdemadera.cl/wp-content/uploads/2017/12/Tablon-cafe-360x360.jpg" class="fullpantalla"/>
+                  <img src="https://www.escueladesarts.com/wp-content/uploads/MASTER-EN-VIVEROS-JARDINES-Y-CENTROS-DE-JARDINERIA.jpg" class="fullpantalla"/>
                   <!-- random image -->
                   <div class="caption left-align">
-                    <h3>Left Aligned Caption</h3>
-                    <h5 class="light grey-text text-lighten-3">
-                      Here's our small slogan.
+                    <h3>Jardineria!</h3>
+                    <h5 class="light black-text text-black">
+                      Haz que tu jardin se vea grandioso.
                     </h5>
                   </div>
                 </li>
                 <li>
-                  <img src="https://durmientesdemadera.cl/wp-content/uploads/2017/12/Tablon-cafe-360x360.jpg" class="fullpantalla"/>
+                  <img src="http://www.mndelgolfo.com/wp-content/uploads/2016/12/herramientas-de-carpinteros.jpg" class="fullpantalla"/>
                   <!-- random image -->
                   <div class="caption right-align">
-                    <h3>Right Aligned Caption</h3>
-                    <h5 class="light grey-text text-lighten-3">
-                      Here's our small slogan.
+                    <h3>Herramientas!</h3>
+                    <h5 class="light black-text text-black">
+                     Todo en herramientas
                     </h5>
                   </div>
                 </li>
                 <li>
-                  <img src="https://durmientesdemadera.cl/wp-content/uploads/2017/12/Tablon-cafe-360x360.jpg" class="fullpantalla"/>
+                  <img src="https://s3.amazonaws.com/rtvc-assets-canalinstitucional.tv/s3fs-public/images/canal_institucional_utiles_escolares.jpg" class="fullpantalla"/>
                   <!-- random image -->
                   <div class="caption center-align">
-                    <h3>This is our big Tagline!</h3>
-                    <h5 class="light grey-text text-lighten-3">
-                      Here's our small slogan.
+                    <h3>Utiles!</h3>
+                    <h5 class="light black-text text-black">
+                      Ofertas para el regreso a clases.
                     </h5>
                   </div>
                 </li>
@@ -46,22 +46,22 @@
             </div>
           
         <div id="login">
-            <center> <h1>Login</h1></center>
+            <center> <h1> <font color="#e65100">Login</font></h1></center>
              <div class="row" >
                     <div class="input-field ">
-                      <i class="material-icons prefix">account_circle</i>
+                      <i class="large material-icons prefix">face</i>
   
                       <input id="icon_prefix"  class="validate" type="text" name="username" v-model="input.username" placeholder="Username" />
-                      <label for="icon_prefix">Usuario</label>
+                      <label for="icon_prefix"><h5>Usuario</h5></label>
                     </div>
                     
                     <div class="input-field ">
-                      <i class="material-icons prefix">phone</i>
+                      <i class="large material-icons prefix">fingerprint</i>
                        <input id="icon_telephone" class="validate" type="password" name="password" v-model="input.password" placeholder="Password" v-on:keyup.enter="login()"/>
-                      <label for="icon_telephone" >Password</label>
+                      <label for="icon_telephone" ><h5>Password</h5></label>
                     </div>
                   </div>
-       <center> <button class="btn waves-effect waves-light orange pulse"  v-on:click="login()">Log in
+       <center> <button class="btn waves-effect waves-light orange darken-4 pulse"  v-on:click="login()">Log in
     <i class="material-icons right">send</i>
   </button></center>
        
@@ -111,40 +111,35 @@
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Satisfy&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Bangers|Poiret+One&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+
 #log{
     background-color:white;
     text-emphasis-color: white;
 }
-    #login {
-      /* width: 500px;
-        border: 1px solid #CCCCCC;
-        background-color: #FFFFFF;
-        margin: auto;
-        margin-top: 200px;
-        padding: 20px;*padding: */
-        position: absolute;
-     left: 25%; 
-     width: 50%;
-      z-index: 3;
-      opacity: 0.8;
-      height: 100%;
-      background-color:white;
-      font-size: 50px;
-    }
-
-    .fullpantalla{
-       position: absolute;
-    display: inline-block;
-    width: 100%;
-    margin-top: 10px;
-    margin-left:0%;
-     z-index: 1;
-     height: 100%;
-  
+input{
+    font-family: "Lobster",cursive;
 }
-fullscream{
- height: 100%;
-
+h1{
+  /* font-family: "Satisfy",cursive;
+    font-family: "Poiret One",cursive;*/
+    font-family: "Lobster",cursive;
+    
 }
+button{
+    font-family: "Lobster",cursive;
+}
+.fullscream{
+ /* font-family: "Satisfy",cursive;
+    font-family: "Poiret One",cursive;*/
+    font-family: "Lobster",cursive;
+    
+}
+
+   
 
 </style>
