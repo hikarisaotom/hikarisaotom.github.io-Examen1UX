@@ -1,37 +1,29 @@
 <template>
   <div>
     <!--INICIOO DE MI CODIO-->
+ 
     
-    <center><div class="col s12 ">
-      <ul class="tabs cyan lighten-3">
-        <li class="tab col s3">
-          <router-link to="/Construccion">Construccion</router-link>
-        </li>
-        <li class="tab col s3">
-          <router-link to="/Escolar">Escolar</router-link>
-        </li>
-        <li class="tab col s3">
-          <router-link to="/Inicio">Herramientas</router-link>
-        </li>
-        <li class="tab col s3">
-          <router-link to="/Jardin">Jardineria</router-link>
-        </li>
-        <li class="tab col s3">
-         <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i> Configuracion</a>
-        </li>
-        <li class="tab col s3">
-         <a  data-target="carrito" class="sidenav-trigger"  @click="loadCarrito"><i class="material-icons">shop</i>Carrito</a>
-         
-        </li>
-        
+ <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
+      <ul class="right hide-on-med-and-down">
+       
+        <li  class="tooltipped" data-position="bottom" data-tooltip="Herramientas"><router-link to="/Construccion"><i class="material-icons">view_module</i></router-link></li>
+        <li class="tooltipped" data-position="bottom" data-tooltip="Escolar" ><router-link to="/Escolar"><i class="material-icons">view_module</i></router-link></li>
+        <li class="tooltipped" data-position="bottom" data-tooltip="Inicio" ><router-link to="/Inicio"><i class="material-icons">refresh</i></router-link></li>
+        <li class="tooltipped" data-position="bottom" data-tooltip="Jardin" ><router-link to="/Jardin"><i class="material-icons">more_vert</i></router-link></li>
       </ul>
-    </div></center>
+    </div>
+  </nav>
    
     <!--FIN DE MI CODIO-->
      <ul id="slide-out" class="sidenav">
     <li><div class="user-view">
       <div class="background">
         <img src="images/office.jpg">
+        <div id="nav">
+          
+        </div>
       </div>
       <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
       <a href="#name"><span class="white-text name">John Doe</span></a>
@@ -102,9 +94,13 @@ export default {
         ...mapMutations(['loadCarrito']),
         ...mapMutations(['addToCart']),
         ...mapMutations(['Aumentar']),
-         ...mapMutations(['disminuir'])
+         ...mapMutations(['disminuir']),
+         
+        
         
     }
+
+   
 
  
 };
@@ -117,11 +113,19 @@ document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal');
     var instances = M.Modal.init(elems);
   });
-
+ document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.tooltipped');
+    var instances = M.Tooltip.init(elems);
+  });
 
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css?family=Mystery+Quest");
+p {
+  font-family: "Mystery Quest", cursive;
+  font-size: 150%;
+}
   .carrito{
     width:100%;
   }
