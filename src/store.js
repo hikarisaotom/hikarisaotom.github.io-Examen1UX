@@ -19,6 +19,18 @@ export default new Vuex.Store({
         cantidad:50
       },
       { tipo: 'escolar',
+      nombre:'Cuaderno',
+      url:'/assets/cuaderno.jpg',
+       descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
+       cantidad:50
+     },
+     { tipo: 'escolar',
+     nombre:'Cuaderno',
+     url:'/assets/cuaderno.jpg',
+      descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
+      cantidad:50
+    },
+      { tipo: 'escolar',
        nombre:'Cuaderno',
         url:'../resources/cuaderno.jpg',
         descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
@@ -45,13 +57,24 @@ export default new Vuex.Store({
           url:'../resources/cuaderno.jpg',
           descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
           cantidad:50
-        }]
+        }],
+
+        productoAgregarCarrito:{},
+        carritos:[]
+
   },
   mutations: {
+    addToCart(state,index){
+     var productoAgregarCarrito=index;
+     state.carritos.push(productoAgregarCarrito);
+     console.log('VALOR',index);
+      window.localStorage.setItem('CarritoCompras',JSON.stringify(state.carritos));
+    
+    },
     dismunirStockHerramienta(state,index){
+  
       state.herramientas[index].cantidad--;
     },
-
     dismunirStockJardin(state,index){
       state.jardines[index].cantidad--;
     },
@@ -60,10 +83,11 @@ export default new Vuex.Store({
     },
     dismunirStockEscolar(state,index){
       state.escolares[index].cantidad--;
-    }
+    },
 
   },
   actions: {
 
   }
+  
 })

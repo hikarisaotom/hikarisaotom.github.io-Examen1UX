@@ -1,13 +1,13 @@
 <template>
-    <div>
+    <div class="muestras">
         <!--INICIO DEL MI CODIGO-->
               <div class="col s12 green">
           <ul>
               <li v-for="(item,index) of arrayordenado" :key="item.id">
-                <div class="row muestras">
-                  <div class="col s3 muestras">
-                    <div class="card muestras">
-                      <div class="card-image muestras">
+                <div class="row">
+                  <div class="col s3">
+                    <div class="card">
+                      <div class="card-image">
                         <img v-bind:src="item.url" />
                         <span class="card-title">{{ item.nombre }}</span>
                       </div>
@@ -22,9 +22,11 @@
                       </div>
                       <div class="card-action" v-show="item.cantidad>0">
                           
-                        <a href="#" @click="dismunirStockHerramienta(index)">Agregar a carrito</a>
+                        <a href="#" @click="dismunirStockJardin(index)">Agregar a carrito</a>
+                        <a  @click="addToCart(arrayordenado[index])">probando bandera</a>
                       </div>
                       <div class="card-action" v-show="item.cantidad===0||item.cantidad<0">
+                        
                         <h5>NO HAY EXISTENCIA EN STOCK</h5>
                       </div>
                     </div>
@@ -48,8 +50,18 @@ export default {
         }
     },
     methods:{
-        ...mapMutations(['dismunirStockKJardin'])
+        ...mapMutations(['dismunirStockJardin']),
+        ...mapMutations(['addToCart'])
     }
 
 }
 </script>
+
+<style scoped>
+  .muestras{
+    width:100%; 
+    padding: 0px;
+    height:100%;
+    overflow-x:hidden; overflow-y:scroll;
+  }
+</style>

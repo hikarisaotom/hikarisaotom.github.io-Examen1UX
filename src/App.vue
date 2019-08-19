@@ -4,12 +4,12 @@
       
     </div>
     <Nav-Bar></Nav-Bar>
-      <table>
+      <table class="principal">
         <tr>
-          <td width="30%">
+          <td width="20%" class="celdas">
 <Panel></Panel>
           </td>
-          <td>
+          <td class="celdas">
     <router-view/>
           </td>
         </tr>
@@ -26,10 +26,21 @@ export default {
   components:{
     NavBar,
     Panel
+  },
+   created() {
+    console.log('Component has been created!');
   }
 }
-</script>
-<style>
 
+
+</script>
+<style scoped>
+.principal{
+  height: 720px;
+  
+}
+.celdas{
+    padding: 0px;
+  }
 
 </style>
