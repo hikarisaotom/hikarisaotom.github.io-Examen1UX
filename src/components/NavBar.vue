@@ -34,6 +34,7 @@
 
     <!--FIN DE MI CODIO-->
     <ul id="slide-out" class="sidenav">
+      
       <li>
         <div class="user-view">
           <div class="background">
@@ -47,31 +48,31 @@
             />
           </a>
           <a href="#name">
-            <span class="white-text name">Claudia Cortes</span>
+            <span class="white-text name"><h3> Claudia Cortes</h3></span>
           </a>
           <a href="#email">
-            <span class="white-text email">Hikarisaotom</span>
+            <span class="white-text email"><h3> Hikarisaotom</h3></span>
           </a>
         </div>
       </li>
       <li>
         <a href="#!">
-          <i class="material-icons">cloud</i>Cliente Frecuente
+          <i class="material-icons">cloud</i> <font color="orange"><h4> <b>Cliente Frecuente</b></h4></font>
         </a>
+        <br></br>
       </li>
-      <li>
-        <a href="#!">
-          <i class="material-icons">cloud</i>Tiendas cercanas cerca de su ubicacion actual..
-        </a>
-      </li>
+      
 
       <li>
         <div class="divider"></div>
       </li>
       <li>
-        <a class="subheader">Su carrito tiene actualmente los sig productos</a>
+
+        <a class="subheader"><font color="black"><h5> <b>Su carrito tiene actualmente los sig productos</b></h5></font></a>
+       <br></br>
       </li>
-      <p v-for="(item,index) of carritos" :key="item.id">{{index}}-{{item.nombre}}</p>
+      
+      <p v-for="(item,index) of carritos" :key="item.id"> <b> ► {{item.nombre}}</b></p>
     </ul>
 
     <ul id="carrito" class="sidenav carrito">
@@ -216,7 +217,7 @@ div{
  font-family: "Poiret One",cursive;
 }
 p {
-  font-family: "Mystery Quest", cursive;
+  font-family: "Poiret One",cursive;
   font-size: 150%;
 }
 
