@@ -21,10 +21,9 @@
                         </p>
                       </div>
                       <div class="card-action" v-show="item.cantidad>0">
-                          
-                        <a  @click="dismunirStockHerramienta(index)">Agregar a carrito</a>
-                       
-                         <a  @click="addToCart(arrayordenado[index])">probando bandera</a>
+                        
+                        <!-- <a  @click="addToCart(arrayordenado[index])">probando bandera</a>-->
+                      <a class="waves-effect waves-light btn modal-trigger" href="#modal1" @click="dismunirStock(index)">Comprar</a>
                       </div>
                       <div class="card-action" v-show="item.cantidad===0||item.cantidad<0">
                         <h5>NO HAY EXISTENCIA EN STOCK</h5>
@@ -36,14 +35,12 @@
             </ul>
       </div>
         <!--FIN DE MI CODIGO-->
-
-         <!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-
-  
     </div>
 </template>
-
+  <!-- JQUERY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <!-- JS MATERIALIZE -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
 <script>
 import{mapState,mapMutations} from 'vuex';
 export default {
@@ -56,13 +53,14 @@ export default {
     },
     methods:{
         ...mapMutations(['dismunirStockHerramienta']),
-         ...mapMutations(['addToCart'])
+         ...mapMutations(['addToCart']),
+         ...mapMutations(['dismunirStock'])
     }
 
 }
 
 
-document.addEventListener('DOMContentLoaded', function() {
+ document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal');
     var instances = M.Modal.init(elems);
   });

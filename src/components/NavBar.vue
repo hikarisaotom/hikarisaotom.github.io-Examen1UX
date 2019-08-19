@@ -81,11 +81,15 @@
  <!-- Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
-      <h4>Modal Header</h4>
+      <h4>{{productoAgregarCarrito.nombre}}</h4>
+     Disponibles en stock:  {{productoAgregarCarrito.cantidad}}
+     <input type="text" v-model.number="totalcomprar" disabled/>
+     <button  @click="Aumentar">+</button>
+     <button  @click="disminuir">-</button>
       <p>A bunch of text</p>
     </div>
     <div class="modal-footer">
-      <a  class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    <a href="#!" class="waves-effect waves-green btn-flat" @click="addToCart">Agregar a Carrito</a>
     </div>
   </div>
      
@@ -104,11 +108,15 @@ export default {
  
   computed:{
         ...mapState(['carritos']),
-        ...mapState(['carritos']),
+        ...mapState(['productoAgregarCarrito']),
+        ...mapState(['totalcomprar']),
         
     },
      methods:{
         ...mapMutations(['loadCarrito']),
+        ...mapMutations(['addToCart']),
+        ...mapMutations(['Aumentar']),
+         ...mapMutations(['disminuir'])
         
     }
 

@@ -61,31 +61,54 @@ export default new Vuex.Store({
         }],
 
         productoAgregarCarrito:{
-          nombre:''        },
-        carritos:[]
+          nombre:'' ,
+        id:0       },
+        carritos:[],
+        totalcomprar:0
 
   },
   mutations: {
     loadCarrito(state){
-      
       var dbcarritos=JSON.parse(window.localStorage.getItem('CarritoCompras'));
       var dbProducto=JSON.parse(window.localStorage.getItem('productoTemp'));
       state.carritos=dbcarritos;
       state.productoAgregarCarrito=dbProducto;
       console.log("MOSTRANDO DATOS EN LOCAL STORAGE");
      },
-    addToCart(state,index){
-   
-      state.productoAgregarCarrito=index;
-      console.log('STATE MODIFICADO',state.productoAgregarCarrito);
-     state.carritos.push(state.productoAgregarCarrito);
-     console.log('VALOR',index);
+
+    addToCart(state){
+      var index=state.productoAgregarCarrito.id;
+      console.log('TOTAL A DISMINUIR',state.totalcomprar);
+      state.herramientas[index].cantidad=state.herramientas[index].cantidad-state.totalcomprar;
+      console.log('NUEVA CANTIDAD', state.herramientas[index]);
+     state.carritos.push( {tipo: state.productoAgregarCarrito.tipo,
+     nombre: state.productoAgregarCarrito.nombre,
+      url:state.productoAgregarCarrito.url,
+      descripcion:state.productoAgregarCarrito.descripcion,
+      cantidad:state.totalcomprar
+    }
+     );
+ 
       window.localStorage.setItem('CarritoCompras',JSON.stringify(state.carritos));
       window.localStorage.setItem('productoTemp',JSON.stringify(state.productoAgregarCarrito));
-    
     },
+
+
+    dismunirStock(state,index){
+      state.productoAgregarCarrito=state.herramientas[index];
+      state.productoAgregarCarrito.id=index;
+     
+    },
+    Aumentar(state){
+      state.totalcomprar++;
+      console.log('aumentando',state.totalcomprar);
+    },
+    disminuir(state){
+      state.totalcomprar--;
+      console.log('disminuyendo',state.totalcomprar);
+    },
+
     dismunirStockHerramienta(state,index){
-  
       state.herramientas[index].cantidad--;
     },
     dismunirStockJardin(state,index){
