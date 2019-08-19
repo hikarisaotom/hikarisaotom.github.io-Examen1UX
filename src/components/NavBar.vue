@@ -5,7 +5,7 @@
     
  <nav>
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
+      <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Ferreteria</a>
       <ul class="right hide-on-med-and-down">
        
         <li  class="tooltipped" data-position="bottom" data-tooltip="Herramientas"><router-link to="/Construccion"><i class="material-icons">view_module</i></router-link></li>
@@ -20,32 +20,36 @@
      <ul id="slide-out" class="sidenav">
     <li><div class="user-view">
       <div class="background">
-        <img src="images/office.jpg">
+        <img src="https://www.logaster.com.es/blog/wp-content/uploads/2019/01/4-min.jpg">
         <div id="nav">
           
         </div>
       </div>
-      <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
-      <a href="#name"><span class="white-text name">John Doe</span></a>
-      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+      <a href="#user"><img class="circle" src="http://emser.es/wp-content/uploads/2016/08/usuario-sin-foto.png"></a>
+      <a href="#name"><span class="white-text name">Claudia Cortes</span></a>
+      <a href="#email"><span class="white-text email">Hikarisaotom</span></a>
     </div></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-    <li><a href="#!">Second Link</a></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>Cliente Frecuente</a></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>Tiendas cercanas cerca de su ubicacion actual..</a></li>
+  
     <li><div class="divider"></div></li>
-    <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect sidenav-close" href="#!">Third Link With Waves</a></li>
+    <li><a class="subheader">Su carrito tiene actualmente los sig productos</a></li>
+   <p v-for="(item,index) of carritos" :key="item.id">
+        {{index}}-{{item.nombre}} 
+      </p>
   </ul>
 
   <ul id="carrito" class="sidenav carrito">
-    <li><div class="user-view">
+    <li>
+      <div class="user-view" width="100%">
       <div class="background">
-        <img src="images/office.jpg">
+        <img src="http://disruptivoo.com/wp-content/uploads/2019/04/62-Fondos-de-Pantalla-Abstractos-para-tus-dispositivos-58.jpg">
       </div>
       
-      <a href="#name"><span class="white-text name">John Doe</span></a>
-      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+      <a href="#name"><span class="white-text name"><h1>CARRITO</h1></span></a>
+      
     </div>
-     PRODUCTOS EN SU CARRITO AQUI 
+    <table></table>
       <p v-for="(item,index) of carritos" :key="item.id">
         {{index}} - {{item.nombre}} -{{item.cantidad}}
       </p>
@@ -126,7 +130,5 @@ p {
   font-family: "Mystery Quest", cursive;
   font-size: 150%;
 }
-  .carrito{
-    width:100%;
-  }
+ 
 </style>

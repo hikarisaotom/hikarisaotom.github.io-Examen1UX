@@ -1,11 +1,39 @@
 <template>
     <div class="muestras">
         <!--INICIO DEL MI CODIGO-->
-              <div class="col s12 green ">
-          <ul>
-              <li v-for="(item,index) of arrayordenado" :key="item.id">
-                <div class="row" v-show="item.tipo==='escolar'">
-                  <div class="col s3 ">
+           <div class="col s12 white">
+      <table>
+       <tr>
+         <td  v-for="(item,index) of arrayordenado" :key="item.id" v-show="item.tipo==='jardin' &&item.lugar===1">
+           <div class="col s3 ">
+                    <div class="card ">
+                      <div class="card-image" >
+                        <img v-bind:src="item.url" class="tamano" />
+                        <span class="card-title black-text">{{ item.nombre }}</span>
+                      </div>
+                      <div class="card-content">
+                        <p>
+                          {{ item.descripcion }}
+                        </p>
+                        <p>
+                          Cantidad:
+                          {{ item.cantidad }}
+                        </p>
+                      </div>
+                      <div class="card-action" v-show="item.cantidad>0">
+                      <a class="waves-effect waves-light btn modal-trigger" href="#modal1" @click="dismunirStock(index)">Comprar</a>
+                      </div>
+                      <div class="card-action" v-show="item.cantidad===0||item.cantidad<0">
+                        <h5>NO HAY EXISTENCIA EN STOCK</h5>
+                      </div>
+                    </div>
+                  </div>
+         </td>
+         
+       </tr>
+       <tr>
+          <td  v-for="(item,index) of arrayordenado" :key="item.id" v-show="item.tipo==='jardin' &&item.lugar===2">
+           <div class="col s3 ">
                     <div class="card ">
                       <div class="card-image">
                         <img v-bind:src="item.url" />
@@ -28,10 +56,11 @@
                       </div>
                     </div>
                   </div>
-                </div>
-              </li>
-            </ul>
-      </div>
+         </td>
+       </tr>
+
+      </table>
+    </div>
         <!--FIN DE MI CODIGO-->
     </div>
 </template>

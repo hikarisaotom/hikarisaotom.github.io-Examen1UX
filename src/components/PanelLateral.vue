@@ -1,7 +1,7 @@
 <template>
-  <div class="padre indigo lighten-3">
+  <div class="padre orange accent-2">
     <!--INICIO DEL MI CODIGO-->
-    <div class="cols 8 indigo lighten-3 hijo">
+    <div class="cols 8  orange accent-2 hijo">
       <center>
         <p>LIQUIDACIONES</p>
       </center>

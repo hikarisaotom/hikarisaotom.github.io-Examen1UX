@@ -9,40 +9,62 @@ export default new Vuex.Store({
     herramientas:[
       { tipo: 'herramienta',
        nombre:'MARTILLO',
-        url:'https://www.officedepot.com.mx/medias/11053.jpg-1200ftw?context=bWFzdGVyfHJvb3R8MjU4OTE3fGltYWdlL2pwZWd8aGQxL2hhOC85NTYzMjY5NjkzNDcwLmpwZ3xhNTMxZWNlYzI0ZTVjMWNmZTRlZTdiZjU4NjgwZTVmOTMzZTgxYzZhMWYxYjlkODljNTYyZjNhZTRkMWZmNGQ5',
+        url:'https://d2mq510qed945.cloudfront.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/S/T/STAN0475.jpg',
         descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
-        cantidad:5
+        cantidad:5,
+        lugar:1
+
       },
       { tipo: 'jardin',
        nombre:'PALA',
-       url:'/assets/cuaderno.jpg',
+       url:'http://www.plantelia.com/3878-thickbox/pala-jardin-ancha.jpg',
         descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
-        cantidad:50
+        cantidad:50,
+        lugar:1
       },
+      { tipo: 'jardin',
+      nombre:'PALA',
+      url:'http://www.plantelia.com/3878-thickbox/pala-jardin-ancha.jpg',
+       descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
+       cantidad:50,
+       lugar:1
+     },
       { tipo: 'escolar',
        nombre:'CUADERNO',
-       url:'/assets/cuaderno.jpg',
+       url:'https://www.costco.com.mx/medias/sys_master/products/h77/he7/12047304687646.jpg',
         descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
-        cantidad:50
+        cantidad:50,
+        lugar:1
       },
+      { tipo: 'escolar',
+      nombre:'CUADERNO',
+      url:'https://www.costco.com.mx/medias/sys_master/products/h77/he7/12047304687646.jpg',
+       descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
+       cantidad:50,
+       lugar:1
+     },
       { tipo: 'construccion',
       nombre:'Tubos',
-      url:'/assets/cuaderno.jpg',
+      url:'https://static.bricomart.es/478/5/3/3/a/10106992_fo_01_web.jpg',
        descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
-       cantidad:10
+       cantidad:10,
+       lugar:1
+     },
+     { tipo: 'construccion',
+      nombre:'Tubos',
+      url:'https://static.bricomart.es/478/5/3/3/a/10106992_fo_01_web.jpg',
+       descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
+       cantidad:10,
+       lugar:1
      },
      { tipo: 'herramienta',
      nombre:'CLAVOS',
-     url:'/assets/cuaderno.jpg',
+     url:'https://d2mq510qed945.cloudfront.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/S/T/STAN0475.jpg',
       descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
-      cantidad:50
+      cantidad:50,
+      lugar:1
     },
-      { tipo: 'herramienta',
-       nombre:'TENAZAS',
-        url:'../resources/cuaderno.jpg',
-        descripcion:'Cuadernos de colores de diversas marcas y de excelente calidad',
-        cantidad:50
-      }
+      
   ],
   
         productoAgregarCarrito:{
