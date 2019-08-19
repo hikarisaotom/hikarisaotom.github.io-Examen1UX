@@ -23,7 +23,7 @@
                     class="waves-effect waves-light  modal-trigger btn-flat orange text-white"
                     href="#modal1"
                     @click="dismunirStock(index)"
-                  > <font color="white"><b> Comprar</b></font></a></center>
+                  > <font color="white">Comprar</font></a></center>
                 </div>
               </div>
             </div>

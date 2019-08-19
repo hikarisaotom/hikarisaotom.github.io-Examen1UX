@@ -7,56 +7,65 @@
          <td  v-for="(item,index) of arrayordenado" :key="item.id" v-show="item.tipo==='jardin' &&item.lugar===1">
            <div class="col s3 ">
                     <div class="card ">
-                      <div class="card-image" >
+                      <div class="card-image grey darken-3" >
                         <img v-bind:src="item.url" class="tamano" />
-                        <span class="card-title black-text">{{ item.nombre }}</span>
+                        <span class="card-title black-text grey darken-3">
+                          <font color="white"> <b>{{ item.nombre }} </b></font></span>
                       </div>
                       <div class="card-content">
-                        <p>
-                          {{ item.descripcion }}
-                        </p>
-                        <p>
-                          Cantidad:
+                        <p><h5><b>
+                          {{ item.descripcion }}</b>
+                          </h5>
+                        
+                        <p><h5>
+                          
+                          <font color="orange"> <b>Cantidad:</b></font>
                           {{ item.cantidad }}
-                        </p>
+                          </h5>
+                       
                       </div>
-                      <div class="card-action" v-show="item.cantidad>0">
-                      <a class="waves-effect waves-light btn modal-trigger" href="#modal1" @click="dismunirStock(index)">Comprar</a>
+                      <div class="card-action grey darken-3" v-show="item.cantidad>0">
+                      <a class="waves-effect waves-light btn modal-trigger orange" href="#modal1" @click="dismunirStock(index)"> <b>Comprar</b></a>
                       </div>
                       <div class="card-action" v-show="item.cantidad===0||item.cantidad<0">
-                        <h5>NO HAY EXISTENCIA EN STOCK</h5>
+                         <font color="#e65100"><b> <h3>NO HAY EXISTENCIA EN STOCK</h3></b></font>
                       </div>
                     </div>
                   </div>
          </td>
          
        </tr>
-       <tr>
-          <td  v-for="(item,index) of arrayordenado" :key="item.id" v-show="item.tipo==='jardin' &&item.lugar===2">
+          <tr>
+         <td  v-for="(item,index) of arrayordenado" :key="item.id" v-show="item.tipo==='jardin' &&item.lugar===2">
            <div class="col s3 ">
                     <div class="card ">
-                      <div class="card-image">
-                        <img v-bind:src="item.url" />
-                        <span class="card-title black-text">{{ item.nombre }}</span>
+                      <div class="card-image grey darken-3" >
+                        <img v-bind:src="item.url" class="tamano" />
+                        <span class="card-title black-text grey darken-3">
+                          <font color="white"> <b>{{ item.nombre }} </b></font></span>
                       </div>
                       <div class="card-content">
-                        <p>
-                          {{ item.descripcion }}
-                        </p>
-                        <p>
-                          Cantidad:
+                        <p><h5><b>
+                          {{ item.descripcion }}</b>
+                          </h5>
+                        
+                        <p><h5>
+                          
+                          <font color="orange"> <b>Cantidad:</b></font>
                           {{ item.cantidad }}
-                        </p>
+                          </h5>
+                       
                       </div>
-                      <div class="card-action" v-show="item.cantidad>0">
-                      <a class="waves-effect waves-light btn modal-trigger" href="#modal1" @click="dismunirStock(index)">Comprar</a>
+                     <div class="card-action grey darken-3" v-show="item.cantidad>0">
+                      <a class="waves-effect waves-light btn modal-trigger orange" href="#modal1" @click="dismunirStock(index)"> <b>Comprar</b></a>
                       </div>
                       <div class="card-action" v-show="item.cantidad===0||item.cantidad<0">
-                        <h5>NO HAY EXISTENCIA EN STOCK</h5>
+                         <font color="#e65100"><b> <h3>NO HAY EXISTENCIA EN STOCK</h3></b></font>
                       </div>
                     </div>
                   </div>
          </td>
+         
        </tr>
 
       </table>
@@ -95,6 +104,10 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css?family=Bangers|Poiret+One&display=swap");
+div{
+  font-family: "Poiret One",cursive;
+}
   .muestras{
     width:100%; 
     height:100%;

@@ -89,26 +89,40 @@
             </span>
           </a>
         </div>
-        <table class="highlight responsive-table">
-          <thead>
+         <table class="highlight responsive-table">
+          <thead class="grey darken-3">
             <tr>
-              <td>Cantidad</td>
-              <td>Producto</td>
-              <td>Precio</td>
-              <td>Eliminar</td>
+              <td><h5><b><font color="white"> Cantidad</font></b></h5></td>
+              <td><h5><b><font color="white"> Producto</font></b></h5></td>
+              <td><h5><b><font color="white"> Precio</font></b></h5></td>
+              <td><h5><b><font color="white"> Eliminar</font></b></h5></td>
             </tr>
           </thead>
+
           <tbody>
             <tr v-for="(item,index) of carritos" :key="item.id">
-              <td>{{item.cantidad}}</td>
-              <td>{{item.nombre}}</td>
-              <td>LPS. {{item.precio}}</td>
-              <td><button @click="eliminar(index)" onclick="M.toast({html: 'Se ha eliminado el producto'})"><i class="material-icons">cloud</i></button></td>
+              <td><h5><b> {{item.cantidad}}</b></h5></td>
+              <td><h5><b>{{item.nombre}}</b></h5></td>
+              <td><h5><b>LPS. {{item.precio}}</b></h5></td>
+              <td>
+                <button
+                  class="orange btn-flat"
+                  @click="eliminar(index)"
+                  onclick="M.toast({html: 'Se ha eliminado el producto'})"
+                >
+                  <i class="material-icons">cloud</i>
+                </button>
+              </td>
             </tr>
-            <tr class="cyan">
-              <td colspan="2"> <b>TOTAL</b></td>
-              <td>LPS.5,0000</td>
-              <td><center> <a class="waves-effect sidenav-close pulse orange" onclick="M.toast({html: 'La compra se ha realizado con exito'})">Comprar</a></center></td>
+            <tr class="grey darken-3">
+              
+               
+              <td colspan="3"> <font color=white><b><h2>TOTAL</h2></b> </font></td>
+              <td><font color=white><h4>LPS.500.00</h4></font></td>
+             
+            </tr>
+            <tr>
+               <td colspan="3"><center> <a class="waves-effect sidenav-close pulse orange btn-large" onclick="M.toast({html: 'La compra se ha realizado con exito'})"><font color="white">Comprar</font></a></center></td>
             </tr>
           </tbody>
         </table>
@@ -121,12 +135,13 @@
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
       <div class="modal-content">
-        <h4 class="orange">{{productoAgregarCarrito.nombre}}</h4>
+        <h3 class="orange"> <b>{{productoAgregarCarrito.nombre}}</b></h3>
        <center> <img v-bind:src="productoAgregarCarrito.url" width="100px"
         height="100px"/>
         </center>
-        <h5> <b> Disponibles en stock: </b></h5> {{productoAgregarCarrito.cantidad}}
-        <h5><b>Precio: </b></h5>  {{productoAgregarCarrito.precio}}
+         
+        <h3> <b> Disponibles en stock: </b></h3>  <font color="#e65100"><b> <h4>{{productoAgregarCarrito.cantidad}}</h4></b></font>
+        <h3><b>Precio: </b></h3>  <font color="#e65100"><b> <h4> LPS.{{productoAgregarCarrito.precio}}</h4></b></font>
         <center>
       <table>
         <tr>
@@ -135,8 +150,9 @@
           v-model.number="totalcomprar"
           disabled
         /></td>
-          <td width="10%"><button class="btn-flat orange" @click="Aumentar"><b>+</b></button></td>
-          <td width="10%"><button class="btn-flat orange" @click="disminuir"><b>-</b></button></td>
+          <td width="10%"><button class="btn-flat orange" @click="Aumentar"><b><h4>+</h4></b></button></td>
+          <td width="10%"><button class="btn-flat orange" @click="disminuir"><b><h3>-</h3></b></button></td>
+          
         </tr>
       </table>
         </center>
@@ -145,7 +161,7 @@
         
         
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer grey darken-3">
         <center>
         <a onclick="M.toast({html: 'Producto agregado al carrito'})" class="waves-effect waves-green btn pulse orange" @click="addToCart">Agregar a Carrito</a>
       </center>
